@@ -3,10 +3,10 @@ package com.mytests.spring.jpa.m2mEntitygraphsTest.data;
 import javax.persistence.*;
 
 /**
- * *
+ **
  * <p>Created by irina on 16.05.2021.</p>
- * <p>Project: spring-entitygraphs-test</p>
- * *
+ * <p>Project: spring-m2m-entitygraphs-test</p>
+ **
  */
 @Entity
 @Table(name = "order_items", schema = "shop")
