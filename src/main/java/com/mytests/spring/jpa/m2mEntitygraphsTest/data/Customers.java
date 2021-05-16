@@ -29,7 +29,7 @@ public class Customers {
     
     @Basic
     @Column(name = "vip")
-    private Byte vip;
+    private Boolean vip;
 
     
     public Integer getCustomerId() {
@@ -60,11 +60,11 @@ public class Customers {
         this.address = address;
     }
 
-    public Byte getVip() {
+    public Boolean getVip() {
         return vip;
     }
 
-    public void setVip(Byte vip) {
+    public void setVip(Boolean vip) {
         this.vip = vip;
     }
 
