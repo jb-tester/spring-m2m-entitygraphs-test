@@ -4,7 +4,6 @@ import com.mytests.spring.jpa.m2mEntitygraphsTest.data.Customers;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.beans.Customizer;
 import java.util.List;
 
 /**
@@ -14,6 +13,6 @@ import java.util.List;
  * *
  */
 public interface CustomerRepo extends JpaRepository<Customers, Integer> {
-      @EntityGraph("Customers")
-      List<Customers> findByVip(Boolean vip);
+    @EntityGraph("Customers")
+    List<Customers> findByVip(Boolean vip);
 }

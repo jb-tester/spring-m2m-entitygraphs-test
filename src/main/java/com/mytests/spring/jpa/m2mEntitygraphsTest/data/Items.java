@@ -2,13 +2,12 @@ package com.mytests.spring.jpa.m2mEntitygraphsTest.data;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Objects;
 
 /**
- **
+ * *
  * <p>Created by irina on 16.05.2021.</p>
  * <p>Project: spring-m2m-entitygraphs-test</p>
- **
+ * *
  */
 @Entity
 @Table(name = "items", schema = "shop")
@@ -16,27 +15,27 @@ public class Items {
     @Id
     @Column(name = "item_id")
     private Integer itemId;
-    
+
     @OneToMany(mappedBy = "items")
     private List<OrderItems> orderItems;
-    
+
     @Basic
     @Column(name = "item_name")
     private String itemName;
-    
+
     @Basic
     @Column(name = "category")
     private String category;
-    
+
     @Basic
     @Column(name = "price")
     private Integer price;
-    
+
     @Basic
     @Column(name = "available")
     private Integer available;
 
-    
+
     public Integer getItemId() {
         return itemId;
     }

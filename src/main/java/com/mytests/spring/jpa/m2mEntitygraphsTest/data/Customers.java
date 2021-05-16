@@ -4,10 +4,10 @@ import javax.persistence.*;
 import java.util.List;
 
 /**
- **
+ * *
  * <p>Created by irina on 16.05.2021.</p>
  * <p>Project: spring-m2m-entitygraphs-test</p>
- **
+ * *
  */
 @Entity
 @Table(name = "customers", schema = "shop")
@@ -20,33 +20,37 @@ public class Customers {
     @Id
     @Column(name = "customer_id")
     private Integer customerId;
-    
+
     @OneToMany(mappedBy = "customers")
     private List<Orders> orders;
-    
+
     @Basic
     @Column(name = "customer_name")
     private String customerName;
-    
+
     @Basic
     @Column(name = "address")
     private String address;
-    
+
     @Basic
     @Column(name = "vip")
     private Boolean vip;
 
-    
+
     public Integer getCustomerId() {
         return customerId;
-    }
-    
-    public List<Orders> getOrders() {
-        return orders;
     }
 
     public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
+    }
+
+    public List<Orders> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Orders> ordersByCustomerId) {
+        this.orders = ordersByCustomerId;
     }
 
     public String getCustomerName() {
@@ -73,16 +77,12 @@ public class Customers {
         this.vip = vip;
     }
 
-    public void setOrders(List<Orders> ordersByCustomerId) {
-        this.orders = ordersByCustomerId;
-    }
-
     @Override
     public String toString() {
         return
                 "customerId=" + customerId +
                         ", customerName='" + customerName +
-                        "', address='" + address  +
+                        "', address='" + address +
                         "', vip=" + vip +
                         ", orders=" + orders +
                         ' ';
