@@ -11,6 +11,11 @@ import java.util.List;
  */
 @Entity
 @Table(name = "customers", schema = "shop")
+@NamedEntityGraph(attributeNodes = {
+        @NamedAttributeNode("customerName"),
+        @NamedAttributeNode("address"),
+        @NamedAttributeNode("orders"),
+})
 public class Customers {
     @Id
     @Column(name = "customer_id")
@@ -70,5 +75,16 @@ public class Customers {
 
     public void setOrders(List<Orders> ordersByCustomerId) {
         this.orders = ordersByCustomerId;
+    }
+
+    @Override
+    public String toString() {
+        return
+                "customerId=" + customerId +
+                        ", customerName='" + customerName +
+                        "', address='" + address  +
+                        "', vip=" + vip +
+                        ", orders=" + orders +
+                        ' ';
     }
 }
